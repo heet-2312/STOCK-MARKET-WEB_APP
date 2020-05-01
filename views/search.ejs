@@ -1,0 +1,35 @@
+<%-include("partials/header")%>
+
+<head>
+    <style>
+    h1.ex1 {
+      padding-top: 180px;
+      text-align:center;
+    }
+    li.ex2{
+        padding:20px;
+    }
+    form {
+  text-align: center;
+}
+    </style>
+    </head>
+<div class="container">
+<h1 class="ex1">SEARCHED STOCK DETAILS</h1>
+
+    <li class="ex2" style="color:red;font-size:30px;text-align:center"><a href="https://financialmodelingprep.com/financial-summary/<%=data["symbol"]%>"><%=data["symbol"]%></a></li>
+    <break></break>
+    <li style="color:blue;font-size:30px;text-align:center"><%=data["price"]%></li>
+
+<!-- <%=data%> -->
+</div>
+<div class="container">
+    <form  action="/dashboard" method="POST">
+        <input type="hidden" name="stockname" value="<%=data["symbol"]%>">
+        <input type="hidden" name="price" value="<%=data["price"]%>">
+        <input type="number" name="quantity">
+        <input type="submit">
+      </form>
+</div>
+
+<%-include("partials/footer")%>

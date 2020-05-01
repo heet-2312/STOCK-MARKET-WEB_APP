@@ -1,0 +1,9 @@
+<%-include("partials/header")%>
+<h1>request page</h1>
+
+<%data1["mostLoserStock"].forEach(function(mostL){%>
+    <li><%=mostL["ticker"]%>    <%=mostL["price"]%></li>
+<%})%>
+
+
+<%-include("partials/footer")%>

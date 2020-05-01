@@ -1,0 +1,35 @@
+<%-include("partials/header")%>
+<head>
+    <style>
+    h1.ex1 {
+      padding-top: 100px;
+      text-align:center;
+    }
+
+    h1.ex2{
+        text-align:center;
+    }
+    </style>
+    </head>
+
+<h1 class="ex1">My Portfolio</h1>
+
+
+
+<div class="container" class="ex1">
+    <div class="row">
+        <div class="col-sm-4" style=" height: 30px; background-color:cyan;">Name</div>
+        <div class="col-sm-4" style="background-color:chartreuse;">Quantity</div>
+        <div class="col-sm-4" style="background-color:cyan;">Bought at:</div>
+      </div>
+    <div class="row">
+        <% user.stocks.forEach(function(stock){%>
+        <div  class ="col-sm-4" style="background-color:blanchedalmond;"><%=stock.stockname%></div>
+        <div class="col-sm-4" style="background-color:lavender;"><%=stock.quantity%> </div>
+        <div class="col-sm-4" style="background-color:plum;"><%=stock.price%></div>
+        <%});%>
+    </div>
+  </div>
+
+
+<%-include("partials/footer")%>
