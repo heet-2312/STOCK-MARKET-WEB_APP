@@ -1,0 +1,96 @@
+<%-include("partials/header")%>
+
+<head>
+    <style>
+    h1.ex1 {
+      padding-top: 100px;
+      text-align:center;
+    }
+
+    h1.ex2{
+        text-align:center;
+    }
+    </style>
+    </head>
+
+   
+<h1 class="ex1">MOST ACTIVES</h1>
+<div class="container" class="ex1">
+    <div class="row">
+        <div class="col-sm-3" style=" height: 30px; background-color:cyan;">Most Active</div>
+        <div class="col-sm-3" style="background-color:chartreuse;">Price</div>
+        <div class="col-sm-3" style="background-color:cyan;">Company Name</div>
+        <div class="col-sm-3" style="background-color:chartreuse;">Percentage Change</div>
+      </div>
+    <div class="row">
+        <%for(i=0;i<10;i++){%>
+        <div  class ="col-sm-3" style="background-color:blanchedalmond;"><a href="https://financialmodelingprep.com/financial-summary/<%=data["mostActiveStock"][i]["ticker"]%>"><%=data["mostActiveStock"][i]["ticker"]%></a></div>
+        <div class="col-sm-3" style="background-color:lavender;"><%=data["mostActiveStock"][i]["price"]%></div>
+        <div class="col-sm-3" style="background-color:plum;"><%=data["mostActiveStock"][i]["companyName"]%></div>
+        <div class="col-sm-3" style="background-color:lavenderblush;"><%=data["mostActiveStock"][i]["changesPercentage"]%></div>
+        <%}%>
+    </div>
+  </div>
+
+
+<h1 class="ex2">MOST GAINERS</h1>
+
+
+
+<div class="container">
+    <div class="row">
+        <div  class="col-sm-3" style="height: 30px; background-color:cyan;">Most Gainer</div>
+        <div class="col-sm-3" style="background-color:chartreuse;">Price</div>
+        <div class="col-sm-3" style="background-color:cyan;">Company Name</div>
+        <div class="col-sm-3" style="background-color:chartreuse;">Percentage Change</div>
+      </div>
+    <div class="row">
+        <%for(i=0;i<10;i++){%>
+        <div class="col-sm-3" style="background-color:blanchedalmond;"><a href="https://financialmodelingprep.com/financial-summary/<%=data2["mostGainerStock"][i]["ticker"]%>"><%=data2["mostGainerStock"][i]["ticker"]%></a></div>
+        <div class="col-sm-3" style="background-color:lavender;">$<%=data2["mostGainerStock"][i]["price"]%></div>
+        <div class="col-sm-3" style="background-color:plum;"><%=data2["mostGainerStock"][i]["companyName"]%></div>
+        <div class="col-sm-3" style="background-color:lavenderblush;"><%=data2["mostGainerStock"][i]["changesPercentage"]%></div>
+        <%}%>
+    </div>
+  </div>
+</div>
+
+
+<h1 class="ex2">MOST LOSERS</h1>
+
+<div class="container">
+    <div class="row">
+        <div  class="col-sm-3" style="height: 30px; background-color:cyan;">Most Loser</div>
+        <div class="col-sm-3" style="background-color:chartreuse;">Price</div>
+        <div class="col-sm-3" style="background-color:cyan;">Company Name</div>
+        <div class="col-sm-3" style="background-color:chartreuse;">Percentage Change</div>
+      </div>
+    <div class="row">
+        <%for(i=0;i<10;i++){%>
+        <div class="col-sm-3" style="background-color:blanchedalmond;"><a href="https://financialmodelingprep.com/financial-summary/<%=data1["mostLoserStock"][i]["ticker"]%>"><%=data1["mostLoserStock"][i]["ticker"]%></a></div>
+        <div class="col-sm-3" style="background-color:lavender;">$<%=data1["mostLoserStock"][i]["price"]%></div>
+        <div class="col-sm-3" style="background-color:plum;"><%=data1["mostLoserStock"][i]["companyName"]%></div>
+        <div class="col-sm-3" style="background-color:lavenderblush;"><%=data1["mostLoserStock"][i]["changesPercentage"]%></div>
+        <%}%>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- 
+<%var i;%>
+<%for(i=0;i<5;i++){%>
+    <li><%=data1["mostLoserStock"][i]["ticker"]%> </li>
+<%}%>
+<%data1["mostLoserStock"].forEach(function(mostL){%>
+    <li><%=mostL["ticker"]%>    <%=mostL["price"]%></li>
+<%})%>
+
+<%data["mostActiveStock"].forEach(function(mostA){%>
+    <li><%=mostA["ticker"]%>    <%=mostA["price"]%></li>
+<%})%> -->
+
+
+<%-include("partials/footer")%>
