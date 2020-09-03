@@ -9,9 +9,7 @@
     li.ex2{
         padding:20px;
     }
-    form {
-  text-align: center;
-}
+
     </style>
     </head>
 <div class="container">
@@ -23,13 +21,4 @@
 
 <!-- <%=data%> -->
 </div>
-<div class="container">
-    <form  action="/dashboard" method="POST">
-        <input type="hidden" name="stockname" value="<%=data["symbol"]%>">
-        <input type="hidden" name="price" value="<%=data["price"]%>">
-        <input type="number" name="quantity">
-        <input type="submit">
-      </form>
-</div>
-
 <%-include("partials/footer")%>
